@@ -1,4 +1,6 @@
-﻿@{
+﻿@inject TodoList.Services.StatisticsService Statistics
+
+@{
    ViewBag.Title = "Home Page";
 }
 
@@ -36,4 +38,12 @@
         @await Component.InvokeAsync("PriorityList", 4, true)
     </div>
 
+    <div class="col-md-4">
+        <h3>Stats</h3>
+        <ul>
+            <li>Total Todo's: @await Statistics.GetCount()</li>
+            <li>Completed: @await Statistics.GetCompletedCount()</li>
+            <li>Average Priority: @await Statistics.GetAveragePriority()</li>
+        </ul>
+    </div>
 </div>
