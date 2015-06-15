@@ -19,6 +19,8 @@ namespace TodoList.Models
     {
         private static bool _created;
 
+        public DbSet<TodoItem> TodoItems { get; set; }
+
         public ApplicationDbContext()
         {
             // Create the database and schema if it doesn't exist
