@@ -32,6 +32,8 @@
    </div>
 
     <div class="col-md-4">
-        @Component.Invoke("PriorityList", 2)
+        @*@Component.Invoke("PriorityList", 2)*@
+        @await Component.InvokeAsync("PriorityList", 4, true)
     </div>
+
 </div>
